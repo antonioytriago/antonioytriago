@@ -1,0 +1,228 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.contenedor {
+    background-color: #ccc;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+
+/*flexbox*/
+display: flex;
+flex-flow:row wrap; /* es igual a: flex-drirection: row (fila)
+flex-wrap: wrap; (para que pase hacia abajo)*/
+
+}
+
+header {
+	background:#2c3e50;
+	width:100%;
+	padding: 10px;
+
+	/* Flexbox */
+	display: flex;
+    justify-content:space-between; /*hacia las esquinas*/
+	align-items:center; /*verticalmente*/
+
+    flex-direction:row;
+	flex-wrap:wrap;
+}
+
+header .logo {
+	color:#fff;
+	font-size:30px
+}
+
+header .logo img {
+	width: 50px;
+    height: 50px;
+	vertical-align: top; /*para que la img se acople bien*/
+    border-radius:50px;
+    border-bottom: black solid;
+}
+
+header .logo a {
+	color:#fff;
+	text-decoration: none;
+	line-height:50px; /*centrar texto verticalmente*/
+}
+
+header nav {
+	width:50%;
+	/* Flexbox */
+
+	display:flex; /*porque es padre de los demas elementos*/
+	flex-wrap:wrap;
+	align-items:center;
+}
+
+header nav a {
+	background:#c0392b;
+	color:#fff;
+	text-align: center;
+	text-decoration: none;
+	padding: 10px;
+
+    	/* Flexbox */
+	flex-grow:1; /*para que todos abarquen el 100%*/
+
+}
+
+header nav a:hover {
+        background:#e74c3c;
+    }
+
+.main {
+        background:#fff;
+        padding:20px;
+
+        flex:1 1 70%;
+        /*flex:1;*/
+    }
+
+.main article {
+        margin-bottom: 20px;
+        padding-bottom:20px;
+        border-bottom:1px solid #000;
+    }
+
+.main article p {
+
+    color: darkblue;
+    text-align: center;
+}
+.main article a {
+
+    background:darkorchid;
+	color:#fff;
+	text-align: center;
+	text-decoration: none;
+	padding: 5px;
+    position: relative;
+    top: 10px;
+    left: 20px;
+
+    }
+
+.main article:nth-last-child(1){ /*para aplicarse al hijo ultimo*/
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom:none;
+    }
+
+    aside {
+        background:#e67e22;
+        padding:20px;
+        /*FLEX*/
+        flex:1 1 30%; /* todas las cajas iguales y ocupa 30%*/
+        /*flex:0 0 300px;*/
+
+        display: flex; /*va a ser padre*/
+        flex-wrap:wrap;
+        flex-direction:column; /* en forma de columna*/
+        justify-content:flex-start; /*para que se justifique desde arriba*/
+    }
+
+    aside .widget {
+        background: #d35400;
+        height:150px;
+        margin:10px;
+				text-align:center;
+    }
+
+    aside .widget a {
+
+            background:blue;
+            color:#fff;
+            text-align: center;
+            text-decoration: none;
+            padding:10px;
+            position:relative;
+            top: 20px;
+            left: 10px;
+
+
+
+    }
+    footer {
+        background:#2c3e50;
+        width: 100%;
+        padding:20px;
+
+        /* Flexbox */
+        display: flex;
+        flex-wrap:wrap;
+        justify-content:space-between;
+    }
+
+    footer .links {
+        background:#c0392b;
+        display:flex;
+        flex-wrap:wrap;
+    }
+
+    footer .links a {
+        flex-grow:1; /*para que ocupen el 100% de su contenedor*/
+
+        color:#fff;
+        padding:10px;
+        text-align: center;
+        text-decoration:none
+    }
+
+    footer .links a:hover {
+        background:#E74C3C;
+    }
+
+    footer .social {
+        background:#e67e22;
+    }
+
+    footer .social a {
+        color:#fff;
+        text-decoration: none;
+        padding:10px;
+        display: inline-block; /*se usa inline-block porque no se uso flexbox*/
+    }
+
+
+    @media screen and (max-width: 800px) {
+        .contenedor {
+            flex-direction:column;
+        }
+
+        header {
+            flex-direction:column;
+            padding:0;
+        }
+
+        header .logo {
+            margin:20px 0;
+        }
+
+        header nav {
+            width: 100%;
+        }
+
+        aside {
+            flex-direction:row;
+            flex:0;
+        }
+
+        aside .widget {
+            flex-grow:1;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        aside {
+            flex-direction:column;
+        }
+
+        footer {
+            justify-content:space-around;
+        }
+    }

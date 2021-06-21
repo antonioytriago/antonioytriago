@@ -1,0 +1,5 @@
+preguntas frecuentes
+
+cómo pueblo la base de datos?
+cómo registro un trabajador?
+puedo gestionar varias tareas a la vez?
