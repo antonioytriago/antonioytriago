@@ -1,4 +1,4 @@
-const {frutas, dinero} = require("./frutas");
+/*const {frutas, dinero} = require("./frutas");*/
 /*const cowsay = require ("cowsay")*/
 
 /*console.log(
@@ -10,11 +10,11 @@ const {frutas, dinero} = require("./frutas");
   );*/
 
 
-frutas.forEach((fruta) => {
+/*frutas.forEach((fruta) => {
   console.count(fruta);
 });
 
-console.log("mi dinero actual: ", dinero);
+console.log("mi dinero actual: ", dinero);*/
 
 
 /*servidor HTTP*/
