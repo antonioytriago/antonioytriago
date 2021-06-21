@@ -1,13 +1,13 @@
 const {frutas, dinero} = require("./frutas");
-const cowsay = require ("cowsay")
+/*const cowsay = require ("cowsay")*/
 
-console.log(
+/*console.log(
     cowsay.say({
       text: "I'm a moooodule",
       e: "Oo",
       T: "U",
     })
-  );
+  );*/
 
 
 frutas.forEach((fruta) => {
@@ -42,7 +42,7 @@ const port = 3000;
 app.get('/', (req, res) => {
     res.send('Hello World!')
   })
-  
+
   app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
   })
@@ -60,8 +60,9 @@ app.set("view engine", "ejs");
     res.send("ruta de contacto");
   });
 
+
   /*midelware 404*/
-  
+
   app.use ((req, res, next) => {
     res.status(404). sendFile (__dirname + "/public/404.html")
 })
